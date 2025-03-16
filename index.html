@@ -1,152 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- GitHub Pages deployment trigger -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I'm Truly Sorry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0;url=Untitled-1.html">
+  <title>Redirecting...</title>
   <style>
-    /* Base Styles */
     body {
-      font-family: 'Comic Neue', cursive;
-      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-      margin: 0;
-      padding: 0;
-      color: #333;
-      text-align: center; /* Global center alignment for header and overall page */
-    }
-    header {
-      background: #ff80ab;
-      color: #fff;
-      padding: 40px 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      text-shadow: 2px 2px 0 #f50057;
-    }
-    header p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      text-shadow: 1px 1px 0 #f50057;
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    /* Section Styles */
-    .section {
-      background: #fff;
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: relative;
-      text-align: left; /* Paragraphs left-aligned for readability */
-    }
-    .section:before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border: 3px dashed #ff4081;
-      border-radius: 20px;
-      pointer-events: none;
-    }
-    .section h2 {
-      color: #ff4081;
-      margin-top: 0;
-      font-size: 2rem;
-      text-align: center;
-      text-shadow: 1px 1px 0 #ff80ab;
-    }
-    .section p {
-      line-height: 1.6;
-      font-size: 1.1rem;
-      margin: 15px 0;
-    }
-    /* Photos Section */
-    .photos {
+      font-family: 'Arial', sans-serif;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: white;
+      text-align: center;
     }
-    .photos img {
-      width: 200px;
-      height: 200px;
-      border: 5px solid #ff4081;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    .loader {
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 5px solid white;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
     }
-    .photos img:hover {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .photos img {
-        width: 150px;
-        height: 150px;
-      }
-      .section h2 {
-        font-size: 1.6rem;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
+  <script src="js/github-pages-setup.js"></script>
 </head>
 <body>
-  <header>
-    <h1>I'm Truly Sorry</h1>
-    <p>A heartfelt apology in a playful comic style</p>
-  </header>
-  <main>
-    <!-- Letter Section -->
-    <section class="section letter">
-      <h2>A Letter to You</h2>
-      <p>Dear [Khushi],</p>
-      <p>
-        I know you're angry, and I truly regret my actions. I'm writing this letter to express my sincere apology.
-        I value every moment we share and every smile you bring into my life. Please allow me the chance to make things right
-        and show you how deeply I care.
-      </p>
-      <p>With all my heart,<br>[Pushpendra]</p>
-    </section>
-    <!-- Poem Section -->
-    <section class="section poem">
-      <h2>A Poem for You</h2>
-      <p>
-        In a world of colors bright,<br>
-        My mistakes have dimmed our light.<br>
-        With every beat of this tender heart,<br>
-        I long for a brand new start.<br>
-        Roses are red, violets are blue,<br>
-        Every moment apart, I miss you.<br>
-        Let laughter return, let joy prevail,<br>
-        For our friendship is a timeless tale.
-      </p>
-    </section>
-    <!-- Photos Section -->
-    <section class="section photos">
-      <h2>I'm Solly Again</h2>
-      <div>
-        <img src="./img/img1.jpg" alt="Photo 1">
-        <img src="./img/img2.jpg" alt="Photo 2">
-        <img src="./img/img3.jpg" alt="Photo 3">
-        <img src="./img/img4.jpg" alt="Photo 4">
-        <img src="./img/img5.jpg" alt="Photo 5">
-        <img src="./img/img6.jpg" alt="Photo 6">
-      </div>
-    </section>
-  </main>
+  <div>
+    <div class="loader"></div>
+    <p>Redirecting to the apology page...</p>
+    <p>If you are not redirected automatically, <a href="Untitled-1.html" style="color: white;">click here</a>.</p>
+  </div>
 </body>
 </html>

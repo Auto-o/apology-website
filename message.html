@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Message</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="js/github-pages-setup.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .message-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .highlight {
+      color: #ff6b6b;
+      font-weight: 600;
+    }
+    
+    .back-button {
+      padding: 12px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+    
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .heart {
+      position: fixed;
+      font-size: 20px;
+      color: #ff6b6b;
+      animation: float 4s ease-in-out infinite;
+      z-index: -1;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    /* Contact Form Styles */
+    .contact-form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    button {
+      padding: 12px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .form-message {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+    
+    .success {
+      background: rgba(39, 174, 96, 0.2);
+      border: 1px solid rgba(39, 174, 96, 0.5);
+    }
+    
+    .error {
+      background: rgba(231, 76, 60, 0.2);
+      border: 1px solid rgba(231, 76, 60, 0.5);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .message-card, .contact-form {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="message-card">
+    <h1>From the Bottom of My Heart</h1>
+    <p>Madam Ji, I want you to know that you mean the world to me. Your smile brightens my day, and your presence makes everything better.</p>
+    <p>I know I've made mistakes, and I'm truly sorry for hurting you. I promise to be more thoughtful, caring, and understanding.</p>
+    <p>You deserve nothing but the <span class="highlight">best</span>, and I want to be the person who gives you that. Please give me another chance to show you how much I care.</p>
+    <p>I miss our conversations, our laughter, and all the moments we've shared. Let's create more beautiful memories together.</p>
+    <p class="highlight">I'm sorry, and I love you.</p>
+  </div>
+  
+  <div class="contact-form">
+    <h1>Send Your Response</h1>
+    <p>Please let me know your thoughts. I'm waiting to hear from you.</p>
+    
+    <!-- Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      
+      <!-- This is needed for Formspree to know where to redirect after submission -->
+      <input type="hidden" name="_next" value="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/thank_you.html">
+      
+      <button type="submit">Send Message</button>
+    </form>
+    
+    <div id="formMessage" class="form-message"></div>
+  </div>
+  
+  <a href="Untitled-1.html" class="back-button">Go Back</a>
+  
+  <script>
+    // Create floating hearts
+    function createHearts() {
+      const body = document.querySelector('body');
+      const heartCount = 20;
+      
+      for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '❤';
+        
+        // Random position
+        const left = Math.random() * 100;
+        heart.style.left = `${left}%`;
+        
+        const top = Math.random() * 100;
+        heart.style.top = `${top}%`;
+        
+        // Random size
+        const size = Math.random() * 1.5 + 0.5;
+        heart.style.fontSize = `${size}rem`;
+        
+        // Random animation delay
+        const delay = Math.random() * 5;
+        heart.style.animationDelay = `${delay}s`;
+        
+        body.appendChild(heart);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      createHearts();
+    });
+  </script>
+</body>
+</html> 

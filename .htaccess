@@ -1,0 +1,22 @@
+# Deny access to messages.txt
+<Files "messages.txt">
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Protect the view_messages.php file from being indexed
+<Files "view_messages.php">
+  # Disable directory browsing
+  Options -Indexes
+  
+  # Prevent the file from being cached
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </IfModule>
+</Files>
+
+# Enable PHP error reporting (remove in production)
+php_flag display_errors on
+php_value error_reporting E_ALL 

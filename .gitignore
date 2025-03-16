@@ -1,0 +1,58 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Distribution directories
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Executables and large files
+*.exe
+*.vbox-extpack
+*.pdf
+*.zip
+*.rar
+
+# Specific directories to exclude
+cursor/
+Git/
+project/
+
+# Specific files to exclude
+CursorUserSetup-x64-0.46.8.exe
+Git-2.48.1-64-bit.exe
+GitHubDesktopSetup-x64.exe
+Oracle_VirtualBox_Extension_Pack-7.1.6.vbox-extpack
+SpotifySetup.exe
+YogaXII.pdf
+imp ques taniya ma'am class 12.pdf 

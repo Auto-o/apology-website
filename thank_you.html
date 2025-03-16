@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="js/github-pages-setup.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .thank-you-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 30px;
+      z-index: 10;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    
+    .highlight {
+      color: #ff6b6b;
+      font-weight: 600;
+    }
+    
+    .back-button {
+      padding: 12px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .heart {
+      position: fixed;
+      font-size: 20px;
+      color: #ff6b6b;
+      animation: float 4s ease-in-out infinite;
+      z-index: 1;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff6b6b;
+      opacity: 0.8;
+      animation: confetti-fall 5s linear infinite;
+      z-index: 1;
+    }
+    
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .thank-you-card {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-card">
+    <h1>Thank You!</h1>
+    <p>Your message has been sent successfully.</p>
+    <p>I appreciate you taking the time to respond. Your words mean a lot to me.</p>
+    <p>I'll get back to you as soon as possible.</p>
+    <p class="highlight">With love and gratitude.</p>
+  </div>
+  
+  <a href="index.html" class="back-button">Return Home</a>
+  
+  <script>
+    // Create floating hearts
+    function createHearts() {
+      const body = document.querySelector('body');
+      const heartCount = 20;
+      
+      for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '❤';
+        
+        // Random position
+        const left = Math.random() * 100;
+        heart.style.left = `${left}%`;
+        
+        const top = Math.random() * 100;
+        heart.style.top = `${top}%`;
+        
+        // Random size
+        const size = Math.random() * 1.5 + 0.5;
+        heart.style.fontSize = `${size}rem`;
+        
+        // Random animation delay
+        const delay = Math.random() * 5;
+        heart.style.animationDelay = `${delay}s`;
+        
+        body.appendChild(heart);
+      }
+    }
+    
+    // Create confetti
+    function createConfetti() {
+      const body = document.querySelector('body');
+      const confettiCount = 50;
+      const colors = ['#ff6b6b', '#4ecdc4', '#ffbe0b', '#ff9f1c', '#a786df'];
+      
+      for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        
+        // Random position
+        const left = Math.random() * 100;
+        confetti.style.left = `${left}%`;
+        
+        // Random color
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        confetti.style.backgroundColor = colors[colorIndex];
+        
+        // Random size
+        const size = Math.random() * 8 + 5;
+        confetti.style.width = `${size}px`;
+        confetti.style.height = `${size}px`;
+        
+        // Random shape
+        const shapes = ['circle', 'square', 'triangle'];
+        const shapeIndex = Math.floor(Math.random() * shapes.length);
+        if (shapes[shapeIndex] === 'circle') {
+          confetti.style.borderRadius = '50%';
+        } else if (shapes[shapeIndex] === 'triangle') {
+          confetti.style.width = '0';
+          confetti.style.height = '0';
+          confetti.style.backgroundColor = 'transparent';
+          confetti.style.borderLeft = `${size/2}px solid transparent`;
+          confetti.style.borderRight = `${size/2}px solid transparent`;
+          confetti.style.borderBottom = `${size}px solid ${colors[colorIndex]}`;
+        }
+        
+        // Random animation duration and delay
+        const duration = Math.random() * 3 + 2;
+        const delay = Math.random() * 5;
+        confetti.style.animationDuration = `${duration}s`;
+        confetti.style.animationDelay = `${delay}s`;
+        
+        body.appendChild(confetti);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      createHearts();
+      createConfetti();
+    });
+  </script>
+</body>
+</html> 
