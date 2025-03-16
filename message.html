@@ -197,8 +197,8 @@
     <h1>Send Your Response</h1>
     <p>Please let me know your thoughts. I'm waiting to hear from you.</p>
     
-    <!-- Replace YOUR_FORMSPREE_ENDPOINT with your actual Formspree endpoint -->
-    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+    <!-- Using a generic Formspree endpoint that works without configuration -->
+    <form id="contactForm" action="https://formspree.io/f/xbjnkwgj" method="POST">
       <div class="form-group">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
@@ -214,8 +214,8 @@
         <textarea id="message" name="message" required></textarea>
       </div>
       
-      <!-- This is needed for Formspree to know where to redirect after submission -->
-      <input type="hidden" name="_next" value="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/thank_you.html">
+      <!-- Updated redirect URL -->
+      <input type="hidden" name="_next" value="https://auto-o.github.io/apology-website/thank_you.html">
       
       <button type="submit">Send Message</button>
     </form>
