@@ -1,45 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0;url=Untitled-1.html">
-  <title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Truly Sorry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
+    /* Base Styles */
     body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Exo 2', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       margin: 0;
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      color: white;
+      padding: 0;
+      color: #e0e0ff;
       text-align: center;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
     }
     
-    .loader {
-      border: 5px solid rgba(255, 255, 255, 0.3);
+    /* Stars background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    .star {
+      position: absolute;
+      background-color: white;
       border-radius: 50%;
-      border-top: 5px solid white;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin-bottom: 20px;
+      animation: twinkle 5s infinite;
     }
     
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    
+    /* Shooting stars */
+    .shooting-star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      animation: shoot 6s linear infinite;
+      opacity: 0;
+      z-index: 100;
+    }
+    
+    .shooting-star::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      transform: translateX(-100%);
+    }
+    
+    @keyframes shoot {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      20% {
+        transform: translate(400px, 400px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(400px, 400px);
+        opacity: 0;
+      }
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+      background-size: 30px 30px, 80px 80px;
+      z-index: -1;
+    }
+    
+    header {
+      background: rgba(16, 24, 64, 0.8);
+      color: #fff;
+      padding: 40px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border-bottom: 2px solid #7b68ee;
+    }
+    
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      margin: 0;
+      text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+      letter-spacing: 2px;
+    }
+    
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      text-shadow: 0 0 5px #8a2be2;
+      letter-spacing: 1px;
+    }
+    
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    /* Section Styles */
+    .section {
+      background: rgba(16, 24, 64, 0.7);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
+      position: relative;
+      text-align: left;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(123, 104, 238, 0.4);
+    }
+    
+    .section::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border: 2px solid transparent;
+      border-radius: 17px;
+      background: linear-gradient(45deg, #7b68ee, #8a2be2, #4b0082, #7b68ee);
+      background-size: 400% 400%;
+      animation: borderGlow 8s ease infinite;
+      z-index: -1;
+    }
+    
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #9370db;
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
+      text-shadow: 0 0 10px #8a2be2;
+      letter-spacing: 2px;
+    }
+    
+    .section p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      margin: 15px 0;
+    }
+    
+    /* Photos Section */
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    
+    .photos img {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #7b68ee;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    }
+    
+    .photos img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .photos img {
+        width: 150px;
+        height: 150px;
+      }
+      .section h2 {
+        font-size: 1.6rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
-  <script src="js/github-pages-setup.js"></script>
 </head>
 <body>
-  <div>
-    <div class="loader"></div>
-    <p>Redirecting to the apology page...</p>
-    <p>If you are not redirected automatically, <a href="Untitled-1.html" style="color: white;">click here</a>.</p>
-  </div>
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+  
+  <header>
+    <h1>I'm Truly Sorry</h1>
+    <p>A heartfelt apology from across the cosmos</p>
+  </header>
+  <main>
+    <!-- Letter Section -->
+    <section class="section letter">
+      <h2>A Letter to You</h2>
+      <p>Dear [madam ji],</p>
+      <p>
+        I know you're angry, and I truly regret my actions. I'm writing this letter to express my sincere apology.
+        I value every moment we share and every smile you bring into my life. Please allow me the chance to make things right
+        and show you how deeply I care.
+      </p>
+      <p>With all my heart,<br>[your one and only pushpendra]</p>
+    </section>
+    <!-- Poem Section -->
+    <section class="section poem">
+      <h2>Eternal Bond of Friendship</h2>
+      <p>
+        Mountains may crumble, rivers run dry,<br>
+        Yet our friendship shall reach beyond the sky.<br>
+        Like ancient pines that stand through ages long,<br>
+        Our bond eternal, unbreakably strong.<br>
+        Two souls connected through time's endless flow,<br>
+        Neither distance nor seasons shall weaken this glow.<br>
+        As precious jade endures millennium's test,<br>
+        Our friendship eternal, forever blessed.
+      </p>
+    </section>
+    <!-- Photos Section -->
+    <section class="section photos">
+      <h2>Written in the Stars</h2>
+      <div>
+        <img src="WhatsApp Image 2025-03-16 at 10.22.58 PM.jpeg" alt="Memory 1">
+        <img src="WhatsApp Image 2025-03-16 at 10.22.59 PM.jpeg" alt="Memory 2">
+        <img src="WhatsApp Image 2025-03-16 at 10.23.10 PM.jpeg" alt="Memory 3">
+        <img src="WhatsApp Image 2025-03-16 at 10.23.11 PM.jpeg" alt="Memory 4">
+        <img src="WhatsApp Image 2025-03-16 at 10.23.11 PM (1).jpeg" alt="Memory 5">
+        <img src="WhatsApp Image 2025-03-16 at 10.23.12 PM.jpeg" alt="Memory 6">
+      </div>
+    </section>
+    
+    <!-- Message Card Section -->
+    <section class="section message-card">
+      <h2>A Message From My Heart</h2>
+      <div class="card">
+        <p class="card-text">
+          In the vastness of the cosmos, among countless stars and galaxies, 
+          I found you - the brightest light in my universe. 
+          Though I've made mistakes, my affection for you remains constant 
+          like the North Star. I promise to be better, to listen more, 
+          and to cherish every moment we share together.
+        </p>
+        <p class="signature">With eternal devotion,<br>Pushpendra</p>
+      </div>
+      <style>
+        .card {
+          background: rgba(11, 19, 43, 0.7);
+          border-radius: 10px;
+          padding: 25px;
+          margin: 20px auto;
+          max-width: 600px;
+          box-shadow: 0 0 20px rgba(123, 104, 238, 0.4);
+          border: 1px solid rgba(138, 43, 226, 0.3);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #7b68ee, #8a2be2, #4b0082, #7b68ee);
+          background-size: 300% 100%;
+          animation: gradientFlow 8s ease infinite;
+        }
+        
+        @keyframes gradientFlow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        .card-text {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: #e0e0ff;
+          text-align: center;
+          font-style: italic;
+        }
+        
+        .signature {
+          font-family: 'Orbitron', sans-serif;
+          text-align: right;
+          font-size: 1.1rem;
+          color: #9370db;
+          margin-top: 20px;
+          margin-right: 20px;
+        }
+      </style>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <section class="section contact-form">
+      <h2>Any Message For Me</h2>
+      <div class="form-container">
+        <form action="https://formspree.io/f/mqapablr" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Share your thoughts with me..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+      <style>
+        .form-container {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+        
+        .form-group {
+          margin-bottom: 20px;
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-family: 'Orbitron', sans-serif;
+          color: #9370db;
+          font-size: 1rem;
+        }
+        
+        input, textarea {
+          width: 100%;
+          padding: 12px;
+          background: rgba(11, 19, 43, 0.7);
+          border: 1px solid rgba(123, 104, 238, 0.4);
+          border-radius: 8px;
+          color: #e0e0ff;
+          font-family: 'Exo 2', sans-serif;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+          outline: none;
+          box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+          border-color: #7b68ee;
+        }
+        
+        .submit-btn {
+          background: linear-gradient(45deg, #7b68ee, #8a2be2);
+          color: white;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 30px;
+          font-family: 'Orbitron', sans-serif;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: block;
+          margin: 0 auto;
+          box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+        }
+        
+        .submit-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+          background: linear-gradient(45deg, #8a2be2, #4b0082);
+        }
+        
+        ::placeholder {
+          color: rgba(224, 224, 255, 0.5);
+        }
+      </style>
+    </section>
+  </main>
+  <script>
+    // Create stars
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
+      const numberOfStars = 200;
+      
+      for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Random position
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 2;
+        
+        // Random animation delay
+        const delay = Math.random() * 5;
+        
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.animationDelay = `${delay}s`;
+        
+        starsContainer.appendChild(star);
+      }
+    }
+    
+    // Create shooting stars
+    function createShootingStars() {
+      const starsContainer = document.getElementById('stars');
+      const numberOfShootingStars = 20; // Increased number of shooting stars
+      
+      for (let i = 0; i < numberOfShootingStars; i++) {
+        const shootingStar = document.createElement('div');
+        shootingStar.classList.add('shooting-star');
+        
+        // Random position
+        const x = Math.random() * 80;
+        const y = Math.random() * 40; // Keep stars higher in the sky
+        
+        // Random animation delay - shorter delays for more frequent shooting stars
+        const delay = Math.random() * 5;
+        
+        shootingStar.style.left = `${x}%`;
+        shootingStar.style.top = `${y}%`;
+        shootingStar.style.animationDelay = `${delay}s`;
+        
+        // Random rotation to create different angles
+        const angle = Math.random() * 45;
+        shootingStar.style.transform = `rotate(${angle}deg)`;
+        
+        starsContainer.appendChild(shootingStar);
+      }
+    }
+    
+    // Call the function when the page loads
+    window.onload = function() {
+      createStars();
+      createShootingStars();
+    };
+  </script>
 </body>
 </html>
